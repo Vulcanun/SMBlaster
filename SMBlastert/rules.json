@@ -1,0 +1,471 @@
+﻿{
+	"rules": [
+		{
+			"Name": "Readable Scripts",
+			"Description": "While these can't be altered by the current user, reading their contents might provide access to sensitive data or allow further understanding of their functionality.",
+			"Extension": [
+				"bat",
+				"ps1",
+				"vbs",
+				"cmd",
+				"py",
+				"sh",
+				"lua",
+				"rb",
+				"pl",
+				"sql"
+			],
+			"Readable": true,
+			"Writable": false
+		},
+		{
+			"Name": "Writable Scripts",
+			"Description": "These script's contents can be altered, allowing for the inclusion of malicious code. Ideally you should keep the same contents as before but add your malicious payloads in a way the original script's intent is not impeded.",
+			"Extension": [
+				"bat",
+				"ps1",
+				"vbs",
+				"cmd",
+				"py",
+				"sh",
+				"lua",
+				"rb",
+				"pl",
+				"sql"
+			],
+			"Writable": true
+		},
+		{
+			"Name": "Replaceable Scripts",
+			"Description": "While they can't be Written on, these scripts can be replaced by deleting the current file and creating a new one with the same name, allowing for the inclusion of malicious code. Ideally you should keep the same contents as before but add your malicious payloads in a way the original script's intent is not impeded.",
+			"Extension": [
+				"bat",
+				"ps1",
+				"vbs",
+				"cmd",
+				"py",
+				"sh",
+				"lua",
+				"rb",
+				"pl",
+				"sql"
+			],
+			"Writable": false,
+			"Deletable": true,
+			"DirectoryWritable": true
+		},
+		{
+			"Name": "Seizable Scripts",
+			"Description": "These scripts can be hijacked either through changing their ownership to an attacker controlled account or by altering the file's permissions, allowing for the inclusion of malicious code. Ideally you should keep the same contents as before but add your malicious payloads in a way the original script's intent is not impeded.",
+			"Extension": [
+				"bat",
+				"ps1",
+				"vbs",
+				"cmd",
+				"py",
+				"sh",
+				"lua",
+				"rb",
+				"pl",
+				"sql"
+			],
+			"Writable": false,
+			"Seizable": true
+		},
+		{
+			"Name": "Readable IIS Config File",
+			"Description": "This IIS Config file contains XML elements that might define connection strings, security settings, application-specific configurations, and more. By accessing or modifying the web.config file, an attacker could potentially gain unauthorized access to sensitive data or resources, elevate their privileges, or execute arbitrary code on the server.",
+			"Content": [
+				"<system.webServer",
+				"<system.web"
+			],
+			"Writable": false
+		},
+		{
+			"Name": "Writable IIS Config File",
+			"Description": "This IIS Config file contains XML elements that might define connection strings, security settings, application-specific configurations, and more. By accessing or modifying the web.config file, an attacker could potentially gain unauthorized access to sensitive data or resources, elevate their privileges, or execute arbitrary code on the server.",
+			"Content": [
+				"<system.webServer",
+				"<system.web"
+			],
+			"Writable": true
+		},
+		{
+			"Name": "Replaceable IIS Config File",
+			"Description": "",
+			"Content": [
+				"<system.webServer",
+				"<system.web"
+			],
+			"Writable": false,
+			"Deletable": true,
+			"DirectoryWritable": true
+		},
+		{
+			"Name": "Seizable IIS Config File",
+			"Description": "This config file can be hijacked either through changing their ownership to an attacker controlled account or by altering the file's permissions. This IIS Config file contains XML elements that might define connection strings, security settings, application-specific configurations, and more. By accessing or modifying the web.config file, an attacker could potentially gain unauthorized access to sensitive data or resources, elevate their privileges, or execute arbitrary code on the server.",
+			"Content": [
+				"<system.webServer",
+				"<system.web"
+			],
+			"Writable": false,
+			"Seizable": true
+		},
+		{
+			"Name": "Readable IIS Metabase File",
+			"Description": "The Metabase.xml file is an IIS component that contains configuration data for the server and its hosted applications. This file stores information about the server's settings, virtual directories, and permissions. An attacker might be interested in this file because it contains sensitive data and can be modified to achieve unauthorized access, privilege escalation, or other types of attacks.",
+			"Content": [
+				"<IIsWebServer"
+			],
+			"Writable": false
+		},
+		{
+			"Name": "Writable IIS Metabase File",
+			"Description": "The Metabase.xml file is an IIS component that contains configuration data for the server and its hosted applications. This file stores information about the server's settings, virtual directories, and permissions. An attacker might be interested in this file because it contains sensitive data and can be modified to achieve unauthorized access, privilege escalation, or other types of attacks.",
+			"Content": [
+				"<IIsWebServer"
+			],
+			"Writable": true
+		},
+		{
+			"Name": "Replaceable IIS Metabase File",
+			"Description": "The Metabase.xml file is an IIS component that contains configuration data for the server and its hosted applications. This file stores information about the server's settings, virtual directories, and permissions. An attacker might be interested in this file because it contains sensitive data and can be modified to achieve unauthorized access, privilege escalation, or other types of attacks.",
+			"Content": [
+				"<IIsWebServer"
+			],
+			"Writable": false,
+			"Deletable": true,
+			"DirectoryWritable": true
+		},
+		{
+			"Name": "Seizable IIS Metabase File",
+			"Description": "This config file can be hijacked either through changing their ownership to an attacker controlled account or by altering the file's permissions. The Metabase.xml file is an IIS component that contains configuration data for the server and its hosted applications. This file stores information about the server's settings, virtual directories, and permissions. An attacker might be interested in this file because it contains sensitive data and can be modified to achieve unauthorized access, privilege escalation, or other types of attacks.",
+			"Content": [
+				"<IIsWebServer"
+			],
+			"Writable": false,
+			"Seizable": true
+		},
+		{
+			"Name": "Readable PHP Config File",
+			"Description": "PHP has a default config file name, where domain and database credentials might be stored.",
+			"Filename": [
+				"php.ini"
+			],
+			"Readable": true,
+			"Writable": false
+		},
+		{
+			"Name": "Writable PHP Config File",
+			"Description": "PHP has a default config file name, where domain and database credentials might be stored.",
+			"Filename": [
+				"php.ini"
+			],
+			"Writable": true
+		},
+		{
+			"Name": "Readable TQC Files",
+			"Description": "TQC is an extension used by the TQCRunas software, an old and vulnerable method of storing cryptographed credentials for low privilege applications to run certain commands under elevated rights. Upon obtention, attackers might run TQCRunas offline using the '.tqc' file as an argument while listening for 'CreateProcessWithLogonW' WinAPI calls, where the stored credentials will be printed in clean text.",
+			"Extension": [
+				"tqc"
+			],
+			"Readable": true
+		},
+		{
+			"Name": "Readable SSH Private Key Files",
+			"Description": "An alternative to regular username plus password authentication on SSH is the usage of private keys for authentication while the server holds their public keys pair. While it is not possible to define which server a private key file authenticates to simply by reading it's contents, an attacker might attempt to use said file on every possible SSH server or even suppose the server's name based on the environment where the key was found.",
+			"Content": [
+				"-----BEGIN (RSA|DSA|EC) PRIVATE KEY-----[^;]*-----END (RSA|DSA|EC) PRIVATE KEY-----"
+			]
+		},
+		{
+			"Name": "Readable Windows Unattended Install Files",
+			"Description": "The 'unattend.xml' file is a configuration file used during the Windows installation process. It can be used to automate the installation process and configure settings, including login credentials for the operating system or other services. These files might contain administrative credentials.",
+			"Filename": [
+				"unattend.xml",
+				"unattended.xml",
+				"sysprep.inf",
+				"sysprep.xml"
+			],
+			"Readable": true
+		},
+		{
+			"Name": "Readable Group Policy Preferences XML Files",
+			"Description": "Commonly used to alter the local administrator's password across a large quantity of machines, Group Policy Preferences might store encrypted credentials, except Microsoft published the key on the internet in 2012, therefore they are readable by anyone.",
+			"Filename": [
+				"Groups.xml",
+				"Services.xml",
+				"ScheduledTasks.xml",
+				"Printers.xml",
+				"Drives.xml",
+				"DataSources.xml"
+			],
+			"Content": [
+				"cpassword"
+			]
+		},
+		{
+			"Name": "Readable McAfee SiteList.xml",
+			"Description": "Mcafee has a feature to customize update servers and can connect to these servers via HTTP or SMB. SiteList.xml might contain sensitive information such as credentials and internal server names, cryptographed with a reversible method.",
+			"Filename": [
+				"sitelist.xml"
+			],
+			"Content": [
+				"password"
+			]
+		},
+		{
+			"Name": "Readable SAM/SYSTEM/SECURITY Dumps",
+			"Description": "These dumps might allow attackers to obtain sensitive information related to user accounts and authentication mechanisms used by the operating system.",
+			"Filename": [
+				"sam",
+				"system",
+				"security"
+			],
+			"Content": [
+				"regf"
+			]
+		},
+		{
+			"Name": "Readable AWS Credential Files",
+			"Description": "These Credential Files allow for attackers to further compromise AWS resourses depending on the permissions given to the identity the credentials belong to.",
+			"Content": [
+				"aws_access_key_id=",
+				"aws_secret_access_key="
+			]
+		},
+		{
+			"Name": "Readable Web Application Source Code",
+			"Description": "These extensions contain source code generally related to Web Apllications, facilitating the reverse engineering process to identify vulnerabilities or access to credentials.",
+			"Extension": [
+				"php",
+				"asp",
+				"aspx",
+				"war",
+				"vue",
+				"ts",
+				"tsx",
+				"jsx",
+				"jsp",
+				"jspx",
+				"jsf",
+				"jsfx"
+			],
+			"Readable": true,
+			"Writable": false
+		},
+		{
+			"Name": "Writable Web Application Source Code",
+			"Description": "These extensions contain source code generally related to Web Apllications, where Writing permissions allow for the insertion of new vulnerabilities and potential compromise of the entire application and server.",
+			"Extension": [
+				"php",
+				"asp",
+				"aspx",
+				"war",
+				"vue",
+				"ts",
+				"tsx",
+				"jsx",
+				"jsp",
+				"jspx",
+				"jsf",
+				"jsfx"
+			],
+			"Writable": true
+		},
+		{
+			"Name": "Replaceable Web Application Source Code",
+			"Description": "While they can't be Written on, these extensions contain source code generally related to Web Apllications, where by deleting the original file and recreating it with it's original name might allow for the insertion of new vulnerabilities and potential compromise of the entire application and server.",
+			"Extension": [
+				"php",
+				"asp",
+				"aspx",
+				"war",
+				"vue",
+				"ts",
+				"tsx",
+				"jsx",
+				"jsp",
+				"jspx",
+				"jsf",
+				"jsfx"
+			],
+			"Writable": false,
+			"Deletable": true,
+			"DirectoryWritable": true
+		},
+		{
+			"Name": "Seizable Web Application Source Code",
+			"Description": "While they can't be Written on, these files contain source code generally related to Web Apllications, where they could be hijacked either through changing their ownership to an attacker controlled account or by altering the file's permissions.",
+			"Extension": [
+				"php",
+				"asp",
+				"aspx",
+				"war",
+				"vue",
+				"ts",
+				"tsx",
+				"jsx",
+				"jsp",
+				"jspx",
+				"jsf",
+				"jsfx"
+			],
+			"Writable": false,
+			"Seizable": true
+		},
+		{
+			"Name": "Readable Backup Files",
+			"Description": "These backup files might contain sensitive data.",
+			"Extension": [
+				"bak",
+				"bkp",
+				"backup",
+				"old"
+			],
+			"Readable": true
+		},
+		{
+			"Name": "Readable Virtual Machine Disk Files",
+			"Description": "These files are generally backups for the entire disks of Virtual Machines which could be configured on an offline Virtual Machine under the attacker's control, possibly containing sensitive data. These files might be very large in size, making managing it very complicated.",
+			"Extension": [
+				"vmdk",
+				"vhd",
+				"vhdx",
+				"vdi",
+				"qcow2",
+				"raw"
+			],
+			"Readable": true
+		},
+		{
+			"Name": "Readable Outlook Database Files",
+			"Description": "These files allow attackers to read old e-mails, possibly allowing access to sensitive information.",
+			"Extension": [
+				"pst",
+				"ost",
+				"dbx",
+				"msg"
+			],
+			"Readable": true
+		},
+		{
+			"Name": "Readable VNC ini Files",
+			"Description": "These files contain predetermined connection settings for establishing a VNC connection, including easily-reversible credentials.",
+			"Filename": [
+				"vnc.ini"
+			],
+			"Content": [
+				"passwd"
+			]
+		},
+		{
+			"Name": "Readable NTDS.dit",
+			"Description": "NTDS.dit is a file used by Active Directory to store the entire organization's structure and it's objects properties.",
+			"Filename": [
+				"NTDS.DIT"
+			],
+			"Readable": true
+		},
+		{
+			"Name": "Readable Process Memory Dump File",
+			"Description": "These processes might store plaintext credentials or hashed credentials in memory.",
+			"Filename": [
+				"lsass",
+				"winlogon"
+			],
+			"Extension": [
+				"dmp"
+			],
+			"Readable": true
+		},
+		{
+			"Name": "Readable Keepass Password Vault",
+			"Description": "Keepass is a popular open-source password vault software. These files might contain credentials useful for attackers.",
+			"Extension": [
+				"kdbx",
+				"kdb",
+				"pws"
+			],
+			"Readable": true
+		},
+		{
+			"Name": "Readable 1Password Password Vault",
+			"Description": "1Password is a popular password vault software. These files might contain credentials useful for attackers.",
+			"Extension": [
+				"opvault",
+				"1p4vault"
+			],
+			"Readable": true
+		},
+		{
+			"Name": "Readable Enpass Password Vault",
+			"Description": "Enpass is a popular password vault software. These files might contain credentials useful for attackers.",
+			"Extension": [
+				"enpassdb"
+			],
+			"Readable": true
+		},
+		{
+			"Name": "Readable RDP File containing Password",
+			"Description": "RDP Files store preset parameters to facilitate establishing an RDP connection. Amongst the available properties these files may contain, is a password value, storing an user's password.",
+			"Extension": [
+				"rdp"
+			],
+			"Content": [
+				"password"
+			]
+		},
+		{
+			"Name": "Readable Citrix File containing Password",
+			"Description": "Citrix's ICA Files store preset parameters to facilitate establishing a remote connection. Amongst the available properties these files may contain, is a password value, storing an user's password.",
+			"Extension": [
+				"ica"
+			],
+			"Content": [
+				"password="
+			]
+		},
+		{
+			"Name": "Readable LogMeIn File containing Password",
+			"Description": "LogMeIn's LMI Files store preset parameters to facilitate establishing a remote connection. Amongst the available properties these files may contain, is a password value, storing an user's password.",
+			"Extension": [
+				"lmi"
+			],
+			"Content": [
+				"password="
+			]
+		},
+		{
+			"Name": "Readable Steel Runas Executable",
+			"Description": "Steel Runas is an old and vulnerable method of storing cryptographed credentials for low privilege applications to run certain commands under elevated rights. Upon obtention, attackers might run the executable offline while listening for 'CreateProcessWithLogonW' WinAPI calls, where the stored credentials will be printed in clean text.",
+			"Extension": [
+				"exe"
+			],
+			"Content": [
+				"steelrunas"
+			]
+		},
+		{
+			"Name": "Readable Runas Professional Executable",
+			"Description": "Runas Professional is an old and vulnerable method of storing cryptographed credentials for low privilege applications to run certain commands under elevated rights. Upon obtention, attackers might run the executable offline while listening for 'CreateProcessWithLogonW' WinAPI calls, where the stored credentials will be printed in clean text.",
+			"Extension": [
+				"rpa"
+			]
+		},
+		{
+			"Name": "Readable Encrypted RunAs Executable",
+			"Description": "Encrypted RunAs is an old and vulnerable method of storing cryptographed credentials for low privilege applications to run certain commands under elevated rights. Upon obtention, attackers might run the executable offline while listening for 'CreateProcessWithLogonW' WinAPI calls, where the stored credentials will be printed in clean text.",
+			"Extension": [
+				"eras"
+			]
+		},
+		{
+			"Name": "Readable RunApp Executable",
+			"Description": "RunApp is an old and vulnerable method of storing cryptographed credentials for low privilege applications to run certain commands under elevated rights. Upon obtention, attackers might run the executable offline while listening for 'CreateProcessWithLogonW' WinAPI calls, where the stored credentials will be printed in clean text.",
+			"Extension": [
+				"rap"
+			]
+		}
+	]
+}
