@@ -55,7 +55,7 @@ SMBlaster can be used with two different objectives:
 
 If all you want is to map your network's SMB Shares, make use of the "simple" execution method. This will not make use of the rules but will print on the console every share found and the permission the passed credentials have on it. Here's what that looks like:
 ```
-[*] Starting Full scan on 1 targets.
+[*] Starting Simple scan on 1 targets.
 [+] Found share: "\\192.168.15.24\ADMIN$" with [NO ACCESS].
 [+] Found share: "\\192.168.15.24\C$" with [NO ACCESS].
 [+] Found share: "\\192.168.15.24\Users" with [READ].
